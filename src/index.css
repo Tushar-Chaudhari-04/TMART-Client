@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  box-sizing: border-box;
+  font-family: "Poppins",sans-serif;
+}
+
+:root{
+  --primary-color:#7ED957;
+  --secondary-color:gray;
+  --accent-color:#cecece;
+  --nav-box-shadow:0 0 30px 0 ,rgba(0, 0, 0, 0.2);
+}
+
+.nav-icon{
+  width:22px;
+  height:22px;
+}
+
+.nav-icon:hover{
+  color:var(--primary-color);
+}

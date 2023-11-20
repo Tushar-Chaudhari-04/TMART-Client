@@ -1,0 +1,119 @@
+.navbar-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow:var(--nav-box-shadow);
+    .nav-up-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            .tmart-logo {
+                width: 150px;
+                height: 45px;
+                color: rgb(18, 178, 18)
+            }
+
+            .tmart-name {
+                color: darkorange;
+                text-transform: capitalize;
+                margin-left:-40px;
+            }
+        }
+
+        .searchbar-section {
+            display: flex;
+            align-items: center;
+            box-shadow:var(--nav-box-shadow);
+            border:0.1px dotted #635b5b;
+            border-radius: 5px;
+            overflow: hidden;
+            padding: 5px;
+            justify-content: space-between;
+            width:45%;
+            .tmart-search{
+                border:none;
+                outline: none;
+                width: 100%;
+                font-size: 16px;
+            }
+            .search-icon-btn{
+                border:none;
+                color:var(--primary-color);
+                background-color: transparent;
+                cursor: pointer;
+                
+                .search-icon{
+                    width:25px;
+                    height:25px;
+                }
+
+                .search-icon:hover{
+                    background-color: var(--primary-color);
+                    border-radius:50%;
+                    padding: 5px;
+                    color:#fff;
+                }
+            }
+
+           
+        }
+
+
+        .nav-right{
+            display: flex;
+            gap:30px;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 35px;
+            .cart-section{
+                position: relative;
+                .shopping-cart{
+                    width: 22px;
+                    height: 22px;
+                }
+                .cart-qty{
+                    position: absolute;   
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;             
+                    background-color: var(--primary-color);
+                    color:#fff;
+                    border-radius: 50%;
+                    padding: 4px;
+                    width: 25px;
+                    height: 25px;
+                    margin-top:-42px;
+                    margin-left: 12px;
+                    text-align: center;
+                }
+            }
+            .user-section{
+                .user-icon{
+                    
+                }
+            }
+        }
+    }
+
+    .nav-down-section {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap:3%;
+        padding: 10px;
+        
+        a{
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 14px;
+        }
+
+        a:hover{
+            color: var(--primary-color);
+        }
+    }
+}
