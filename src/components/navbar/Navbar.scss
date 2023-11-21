@@ -11,6 +11,10 @@
         .logo-section {
             display: flex;
             align-items: center;
+            .shop-logo{
+                width: 220px;
+                height: 70px;
+            }
             .tmart-logo {
                 width: 150px;
                 height: 45px;
@@ -105,11 +109,13 @@
         align-items: center;
         gap:3%;
         padding: 10px;
-        
         a{
             cursor: pointer;
             font-weight: 400;
-            font-size: 14px;
+            font-size: 16px;
+            text-decoration: none;
+            color:#000;
+
         }
 
         a:hover{

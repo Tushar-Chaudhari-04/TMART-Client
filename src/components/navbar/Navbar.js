@@ -5,15 +5,21 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { FaShopify } from "react-icons/fa";
 import Dropdown from 'react-bootstrap/Dropdown';
+import fitgrocery from "../../assets/logo.png" 
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const [qty, setQty] = useState(10);
+    const navigate=useNavigate();
     return (
         <nav className='navbar-section'>
             <div className='nav-up-section'>
                 <div className='logo-section'>
-                    <FaShopify className='tmart-logo' />
-                    <h3 className='tmart-name'>Tushar SuperMart</h3>
+                    {/* <FaShopify className='tmart-logo' />
+                    <h3 className='tmart-name'>Tushar SuperMart</h3> */}
+                    <a onClick={()=>navigate("/")}>
+                    <img className="shop-logo" src={fitgrocery} alt="fitgrocery"/>
+                    </a>
                 </div>
 
                 <div className='searchbar-section'>
@@ -37,7 +43,7 @@ const Navbar = () => {
             <div className='nav-down-section'>
                 <Dropdown>
                     <Dropdown.Toggle variant="" id="dropdown-basic">
-                       <a>Categories</a> 
+                    Categories
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -46,11 +52,11 @@ const Navbar = () => {
                         <Dropdown.Item href="#/action-3">Other groceries</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <a>About</a>
-                <a>Contact Us</a>
+                <a href='#'>About</a>
+                <a href='#'>Contact Us</a>
                 <Dropdown>
                     <Dropdown.Toggle variant="" id="dropdown-basic">
-                        <a>More</a>
+                    More
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
