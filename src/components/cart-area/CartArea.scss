@@ -1,0 +1,70 @@
+.cart-area {
+    //position: relative;
+
+    img {
+        width: 100%;
+        height: 60px;
+    }
+
+    h4 {
+        margin-left:5%;
+
+        .shopping-cart {
+            // background-color: rgba(var(--btn-primary-color));
+            color: rgba(var(--btn-primary-color));
+            margin-right: 5px;
+        }
+    }
+
+    .main-cart-area {
+        display: flex;
+        flex-wrap: wrap;
+
+        .section1 {
+            margin-left:5%;
+            width: 45%;
+            box-shadow: var(--nav-box-shadow);
+        }
+
+        .section2 {
+            width: 45%;
+            height: 55%;
+            padding: 30px;
+            box-shadow: var(--nav-box-shadow);
+            justify-content: space-between;
+            margin-left: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .charges-name {}
+
+            .charges-amt {
+                .max-charge {
+                    color: rgba(43, 30, 53, 0.5);
+                    text-decoration: line-through;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .payment-btn {
+       // position: absolute;
+        // margin-left:54%;
+        // margin-top:-40%;
+        background-color: rgba(var(--btn-primary-color));
+        color: #fff;
+        width:450px;
+        height: 50px;
+        border-radius: 5px;
+        border: none;
+        padding: 10px;
+        text-transform: uppercase;
+        transition: all 0.5s ease-in-out;
+    }
+    .payment-btn:hover{
+        background-color:var(--primary-color);
+        transform: scale(1.1);
+    }
+}

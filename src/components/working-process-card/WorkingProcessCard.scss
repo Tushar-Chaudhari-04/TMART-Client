@@ -1,0 +1,35 @@
+.WorkingProcessCard{
+    width:30%;
+    height:35%;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    .process-img-section{
+        width:55%;
+        height:55%;
+        margin-left: 18%;
+        img{
+            width:100%;
+            height: 100%;
+            object-fit: contain;
+            transition: all 0.2s ease-in-out;
+        }
+
+        img:hover{
+            transform: scale(1.3);
+        }
+    }
+
+    .process-content-section{
+        align-items: center;
+        .process-content-s1{
+            align-items: center;
+            margin-left: 20%;
+        }
+        .process-content-s2{
+            align-items: center;
+            color:var(--secondary-color);
+            margin-left: 16%;
+        }
+    }
+}

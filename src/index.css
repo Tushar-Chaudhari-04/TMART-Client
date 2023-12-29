@@ -10,7 +10,10 @@
   --primary-color:#7ED957;
   --secondary-color:gray;
   --accent-color:#cecece;
-  --nav-box-shadow:0 0 30px 0 ,rgba(0, 0, 0, 0.2);
+  --btn-color:#DA0C81;
+  --offer-background-color:#940B92;
+  --btn-primary-color:255,50,105;
+  --nav-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .nav-icon{

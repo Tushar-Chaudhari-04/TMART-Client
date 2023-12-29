@@ -1,17 +1,21 @@
 import React from 'react'
 import "./HomeCategories.scss"
+import Slider from "react-slick";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const HomeCategories = () => {
-    const homeCategories = [
+    const navigate=useNavigate();
+
+    const homeSliderData=[
         {
             id: 1,
-            name: "Fruits and Vegetables",
-            url: "https://cdn.zeptonow.com/production///tr:w-420,ar-498-306,pr-true,f-webp,q-80/inventory/IMAGE/9a990120-8b09-4568-aaa8-25d1caec3d46-fnv_enlarged_v2_old.png"
+            name: "ColdDrinks & Juices",
+            url: "https://cdn.zeptonow.com/production///tr:w-210,ar-312-408,pr-true,f-webp,q-80/inventory/category/16913142-c1a3-49bd-bd15-9a68818dd3e8-imageWithName"
         },
         {
             id: 2,
-            name: "Atta & Rice",
-            url: "https://cdn.zeptonow.com/production///tr:w-420,ar-498-306,pr-true,f-webp,q-80/inventory/IMAGE/850b944e-0dc3-4eab-b39d-130949a57a33-aata_enlarged_v2_old.png"
+            name: "Cleaning Essentials",
+            url: "https://cdn.zeptonow.com/production///tr:w-210,ar-312-408,pr-true,f-webp,q-80/inventory/category/776754fb-0209-4305-8f8d-4d9c626c6b30-imageWithName"
         },
         {
             id: 3,
@@ -49,22 +53,31 @@ const HomeCategories = () => {
             url: "https://cdn.zeptonow.com/production///tr:w-210,ar-312-408,pr-true,f-webp,q-80/inventory/category/a936056e-08fc-4051-a471-504e0706c934-imageWithName"
         }
     ]
-    return (
-        <div className='homecategories'>
-            <h4>Explore By Categories</h4>
-            <div className='category-section'>
-                {homeCategories.map(item => {
-                    return (
-                        <div key={item.id} className='category-item'>
-                            <img src={item.url} alt={item.name} />
-                        </div>
-                    )
 
-                })}
+    var settings = {
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 6,
+        slidesToScroll: 1
+    };
+
+  return (
+    <div className='homeSlider'>
+    <h4>Explore By Categories</h4>
+    <Slider {...settings} className='homeSlider'>
+    {homeSliderData.map(item=>{
+        return(
+            <div className='homeSliderData'>
+                <img src={item.url} onClick={()=>(navigate(`/categories/${item.name}`))}/>
             </div>
-
-        </div>
-    )
+        )
+    })}
+    </Slider>
+    </div>
+  )
 }
 
 export default HomeCategories

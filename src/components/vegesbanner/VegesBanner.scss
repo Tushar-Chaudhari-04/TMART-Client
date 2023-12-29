@@ -1,0 +1,16 @@
+.vegesBanner{
+    margin-top: 80px;
+    display: flex;
+   
+    img{
+        width:40%;
+        height:50%;
+    }
+    .veges-content{
+        width:40%;
+        justify-content: center;
+        align-items: center;
+        margin-top:5%;
+        margin-left: 8%;
+    }
+}

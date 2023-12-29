@@ -1,0 +1,17 @@
+.cart-section{
+    margin:0 40px;
+    user-select: none;
+    .empty-cart-section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:50vh;
+        .empty-cart-img{
+            width:80px;
+            height:80px;
+        }
+        .empty-cart-head{}
+        .empty-cart-para{}
+    }
+}

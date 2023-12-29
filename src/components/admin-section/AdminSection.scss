@@ -1,0 +1,23 @@
+.admin-section {
+    margin: 0 40px;
+
+    .admin-panel {
+        display: flex;
+        box-shadow: var(--nav-box-shadow);
+        padding:10px;
+        height:70vh;
+        //justify-content: space-between;
+        align-items: center;
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+        }
+        .admin-border-line{
+            height:70vh;
+            // width: 10px;
+            border-left: 2px solid #000;
+        }
+        .right-section {}
+    }
+}

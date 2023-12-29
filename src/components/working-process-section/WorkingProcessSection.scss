@@ -1,0 +1,18 @@
+.WorkingProcessSection{
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    margin-top: 60px;
+    display: inline-block;
+    h2{
+        align-items: center;
+        justify-content: center;
+        margin-left: 50%;
+    }
+    .WorkingProcessCardSection{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-left:18%;
+    }
+}

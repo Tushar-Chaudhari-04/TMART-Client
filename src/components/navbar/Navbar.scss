@@ -1,8 +1,11 @@
-.navbar-section {
+.navbar-section,nav {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    //padding: 2px;
+    //box-shadow:var(--nav-box-shadow);
+    padding: 4px;
     box-shadow:var(--nav-box-shadow);
+    margin:0 -40px 20px -40px;
     .nav-up-section {
         display: flex;
         justify-content: space-between;
@@ -73,11 +76,27 @@
             justify-content: space-between;
             align-items: center;
             margin-right: 35px;
+            cursor: pointer;
             .cart-section{
                 position: relative;
+                display: flex;
+                width:200px;
+                background-color: rgba(var(--btn-primary-color));
+                color: #fff;
+                width: 130px;
+                border-radius: 10px;
+                border: none;
+                transition: all 0.5s ease-in-out;;
+                justify-content: space-around;
+                align-items: center;
                 .shopping-cart{
                     width: 22px;
                     height: 22px;
+                }
+                .my-cart{
+                    margin-top: 15px;
+                    font-weight: 500;
+                    margin-left: -25px;
                 }
                 .cart-qty{
                     position: absolute;   
@@ -95,10 +114,43 @@
                     text-align: center;
                 }
             }
+
+            .cart-section:hover{
+                transform: scale(1.1);
+            }
+
             .user-section{
+                //margin-right: 80px;
+                width:180px;
+                display:flex;
+                justify-content: space-around;
+                align-items: center;
+
+                h4{
+                    margin-top:15px;
+                }
+                a{
+                    cursor: pointer;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-decoration: none;
+                    color:#000;
+        
+                }
+        
+                a:hover{
+                    color: var(--primary-color);
+                }
                 .user-icon{
                     
                 }
+            }
+            .logout-icon{
+                cursor: pointer;
+                font-weight: 400;
+                font-size: 16px;
+                text-decoration: none;
+                color:#000;
             }
         }
     }

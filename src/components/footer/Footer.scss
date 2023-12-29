@@ -1,0 +1,81 @@
+.footer-section{
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    justify-content: space-between;
+    .section1{
+        display: flex;
+        flex-direction: column;
+        color:var(--secondary-color);
+        .logo-section{
+            width: 220px;
+            height: 70px;
+            color: rgb(18, 178, 18);
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .social-media-section{
+            margin-top: 10px;
+            .social-media-icon{
+                margin-left:15px;
+                cursor: pointer;
+            }
+        }
+        .copyright-section{
+            margin-top: 10px;
+        }
+    }
+
+    .section2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section3{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section4{
+        .subscribe-section{
+            border: 0.5px dotted grey;
+            width:320px;
+            display: flex;
+            padding: 10px;
+            .subscribe-email-logo{
+                height:25px;
+                width: 30px;
+                color:chartreuse;
+            }
+            .subscribe-input{
+                width:280px;
+                border: none;
+                outline: none;
+                margin-left: 5px;
+            }
+            .subscribe-arrow{
+                height:25px;
+                width: 30px;
+                cursor: pointer;
+                transition:all 0.2sec ease-in-out;
+                color:crimson;
+            }
+
+            .subscribe-arrow:hover{
+                color:var(--primary-color);
+                transform: scale(1.3);
+            }
+        }
+        .payment-cards{
+            width:400px;
+            height:200px;
+            margin-top:15px;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.delivery-banner{
+    position: relative;
+    height: 30px;
+    .banner-img{
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        img{
+        width: 100%;
+        }
+    }
+    .banner-text-section{
+        //position: absolute;
+        color:#fff;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        img{
+            position: absolute;
+            transform: translate(-6%,40%);
+        }
+        p{
+          transform: translate(30%,70%);
+        }
+    }
+
+}
