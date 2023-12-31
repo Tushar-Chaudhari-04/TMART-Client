@@ -7,6 +7,7 @@ import { message } from 'antd';
 import axios from "axios"
 import { useLocation, useNavigate } from 'react-router-dom'
 import {Spin} from 'antd'
+import { axiosClient } from '../../utils/AxiosClient'
 
 const Signup = () => {
   const navigate=useNavigate();
@@ -31,12 +32,9 @@ const Signup = () => {
     setUser(userData => ({
       ...userData, [name]: value,
     }))
-    //message.info("User Details Added", 2);
-    console.log("user", user);
   }
 
   const validateInput = () => {
-    console.log("VI ", user);
 
     //FirstName Field
     if (!user.firstName) {
@@ -100,7 +98,7 @@ const Signup = () => {
     let response = {};
     let errored = false;
     try {
-      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/register`,
+      const response = await axiosClient.post(`/auth/register`,
       {
         firstName:user.firstName,
         lastName:user.lastName,

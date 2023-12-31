@@ -10,8 +10,8 @@ import CategoryWiseData from '../../tmart-data/CategoryWiseData';
 
 const ProductsDetailSection = () => {
     const params = useParams();
-    console.log("params", params)
     const location = useLocation();
+
     // Scroll to top if path changes
     useLayoutEffect(() => {
       window && window.scrollTo(0, 0);
@@ -22,7 +22,7 @@ const ProductsDetailSection = () => {
             item.name === params.productId
         )
     })
-    console.log("productData", productData)
+
     return (
         <div className='product-details-section'>
             <Navbar/>

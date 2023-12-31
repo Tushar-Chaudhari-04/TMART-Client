@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux'
 
 const Home = () => {
     const productData = useSelector((state) => state?.ProductReducer?.productData);
-    console.log("productData",productData)
     return (
         <div className='home-tmart'>
             <Navbar />

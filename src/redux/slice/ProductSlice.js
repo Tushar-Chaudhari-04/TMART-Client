@@ -3,8 +3,7 @@ import { axiosClient } from "../../utils/AxiosClient"
 
 export const getProducts=createAsyncThunk("product/getProducts",async(body)=>{
     try {
-        const productResponse=await axiosClient.post(`${process.env.REACT_APP_BASE_URL}/product/getProduct`);
-        console.log("first productResponse ...",productResponse)
+        const productResponse=await axiosClient.post(`/product/getProduct`);
         return productResponse?.data?.result;
     } catch (err) {
         console.log("Error in getUserInfo Slice data",err)
@@ -19,7 +18,6 @@ const productSlice=createSlice({
     },
     extraReducers:(builder)=>{
         builder.addCase(getProducts.fulfilled,(state,action)=>{
-            console.log("state.productData",state.productData,"action.payload",action.payload)
             state.productData=action.payload;
         })
     }

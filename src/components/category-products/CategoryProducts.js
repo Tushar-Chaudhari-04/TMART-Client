@@ -5,7 +5,6 @@ import CategoryWiseData from '../../tmart-data/CategoryWiseData';
 
 const CategoryProducts = ({data}) => {
   const navigate = useNavigate();
-  console.log("data 123321", data);
   return (
     <div className='category-product'>
       <div className='item-image-section'>

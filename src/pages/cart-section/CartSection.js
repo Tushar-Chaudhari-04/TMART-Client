@@ -16,15 +16,11 @@ const CartSection = () => {
   }, [location.pathname]);
   const [user, setUser] = useState({}); 
  const userData = useSelector((state) => state?.UserReducer?.userInfo);
-//  const userData=getItem(USER); 
- console.log("userData in cart",userData);
   const cartDataAll = useSelector((state) => state?.CartReducer?.cart);
   const cartData=cartDataAll.filter(item=>item?.userId==userData?._id)
-  console.log("cartData section", cartData)
 
   useEffect(() => {
     setUser(JSON.parse(getItem(USER)));
-    console.log("user in cart data 11",user)
 }, [])
 
   return (

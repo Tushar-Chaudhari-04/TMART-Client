@@ -10,6 +10,7 @@ import axios from "axios"
 import { Spin } from 'antd'
 import { useDispatch } from 'react-redux'
 import { getUserInfo } from '../../redux/slice/UserSlice'
+import { axiosClient } from '../../utils/AxiosClient'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Login = () => {
     setUser(userData => ({
       ...userData, [name]: value,
     }))
-    console.log("user", user);
+
   }
 
   const validateInput = () => {
@@ -61,15 +62,11 @@ const Login = () => {
     let response = {};
     let errored = false;
     try {
-      console.log(`process.env.REACT_APP_BASE_URL,${process.env.REACT_APP_BASE_URL}`)
-      console.log("user", user);
-      const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/auth/login`,
+      const response = await axiosClient.post(`/auth/login`,
         {
           email: user.email,
           password: user.password,
         })
-      console.log("login response", response)
-      console.log("response", response?.data?.statusCode);
       setLoading(false);
       return response;
     } catch (err) {
@@ -79,15 +76,11 @@ const Login = () => {
   }
 
   const handleLogin = async () => {
-    console.log("validateInput", validateInput)
     if (validateInput()) {
       setLoading(true);
-      console.log("data is valid")
       const response = await performAPICall();
       const responseData = response?.data;
-      console.log("response", response?.data);
       if (responseData?.statusCode === 200) {
-        console.log("response?.data?.result", responseData?.result)
         setItem(USER, JSON.stringify(responseData?.result));
         setItem(ACCESS_TOKEN,JSON.stringify(responseData?.result?.jwt_token))
         setUser({

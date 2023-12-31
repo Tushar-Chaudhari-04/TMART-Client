@@ -18,13 +18,12 @@ const ProductByCategorySection = () => {
       window && window.scrollTo(0, 0);
     }, [location.pathname]);
 
-    console.log("CategoryWiseData",CategoryWiseData)
     const productCategoryData = productData?.filter(item => {
         return (
             item?.categoryId === params?.categoryId
         )
     })
-    console.log("productData by category", productCategoryData)
+
     return (
         <div className='pro-cat-section'>
             <Navbar />

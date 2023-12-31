@@ -39,9 +39,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         message.success(`${user?.firstName} has logout successfully...`)
-        console.log("logout", loading)
         setLoading(true);
-        console.log("logout", loading)
         removeItem(USER);
         removeItem(USER_FIRST_NAME);
         removeItem(ACCESS_TOKEN);
@@ -51,10 +49,8 @@ const Navbar = () => {
             navigate("/login")
             }, 1000);
        
-        console.log("logout", loading)
     }
 
-    console.log(getItem("user"))
     return (
         <nav className='navbar-section'>
             <Spin spinning={loading} fullscreen={loading}>

@@ -1,7 +1,7 @@
 import axios from "axios"
 import { ACCESS_TOKEN, getItem } from "./localStorageManager";
 
-let origin=process.env.REACT_APP_LOCAL_BASE_URL;
+let origin=process.env.REACT_APP_BASE_URL;
 
 if (process.env.NODE_ENV === "production") {
   origin = process.env.REACT_APP_SERVER_BASE_URL;
@@ -27,6 +27,5 @@ export const axiosClient=axios.create({
 axiosClient.interceptors.request.use(request=>{
     const accessToken=getItem(ACCESS_TOKEN);
     request.headers["Authorization"]=`Bearer ${accessToken}`
-    console.log("request.headers",request.headers)
     return request;
   });

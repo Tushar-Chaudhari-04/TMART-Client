@@ -36,10 +36,7 @@ function App() {
 
 
   const userData = useSelector((state) => state?.UserReducer?.getUserInfo);
-  console.log("user data ...",userData)
- console.log("USER",getItem(USER),getItem(USER))
- const data1=getItem(USER);
- console.log("data1",data1?.firstName)  
+  const data1=getItem(USER);
 
   return (
     <div className="App">

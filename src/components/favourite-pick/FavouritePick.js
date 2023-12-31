@@ -16,7 +16,6 @@ const FavouritePick = () => {
     const navigate = useNavigate();
 
     const productData = useSelector((state) => state?.ProductReducer?.productData);
-    console.log("productData", productData)
 
     const [sliderRef, setSliderRef] = useState(null)
 
@@ -61,12 +60,7 @@ const FavouritePick = () => {
         ],
     };
 
-    const handleChange = () => {
-        console.log("btn clicked")
-        console.log("sliderRef", sliderRef)
 
-    }
-    console.log("sliderRef", sliderRef)
     return (
         <div className='favouriteSlider'>
             <div className='controls'>
@@ -80,7 +74,7 @@ const FavouritePick = () => {
             </div>
             
             <Slider ref={setSliderRef} {...sliderSettings} className='favouriteSlider'>
-                {productData.length ? productData?.map((item, index) => {
+                {productData?.length ? productData?.map((item, index) => {
                     return (
                         <div className='favouriteSliderData' key={index}>
                             <div className='item-image-section'>
@@ -103,7 +97,7 @@ const FavouritePick = () => {
                             </div>
                         </div>
                     )
-                }) : navigate("/login")}
+                }) :""}
             </Slider>
 
         </div>

@@ -17,16 +17,10 @@ const ProductDetails = ({ data }) => {
   const [counter, setCounter] = useState(0);
   const [addProductFlag, setAddProductFlag] = useState(false);
   const [removeProductFlag, setRemoveProductFlag] = useState(false);
-  console.log("data123", data)
-  //const userData=getItem(USER);
-  //console.log("userData",userData._id,userData.name)
+
   const userData = useSelector((state) => state?.UserReducer?.userInfo);
  
-  // let firtsName=userData[0].firstName;
-  // let id=userData[0]._id;
-  console.log("user data ... PD",userData)
   const offerPercent = Math.round(((data?.mrp - data?.price) / data?.mrp) * 100);
-  console.log("offerPercent", offerPercent)
 
   useEffect(() => {
     setUser(getItem(USER))

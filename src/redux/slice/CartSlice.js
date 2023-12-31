@@ -33,9 +33,7 @@ const cartSlice=createSlice({
         },
         removeItemFromCart:(state,action)=>{
             const productData=action.payload;
-            console.log("remove productData",productData);
             const productIndex=state?.cart?.findIndex(item=>(item.name==productData?.name && item.userId==productData?.userData?._id));
-            console.log("productIndex",productIndex)
             if(productIndex===-1) return;
 
             if(productData.counter>0){
@@ -54,7 +52,6 @@ const cartSlice=createSlice({
                     state.cart[productIndex]=currentItem;
             }else{
                 state.cart=state.cart.filter((item,index)=>(index!=productIndex));
-                console.log(" state.cart", state.cart)
             }
         },
         resetCart:(state,action)=>{
