@@ -96,11 +96,11 @@ const Navbar = () => {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         {/* {user?.isAdmin && <Dropdown.Item href="" onClick={() => { navigate("/admin-section") }}>Admin Panel</Dropdown.Item>} */}
-                                        <Dropdown.Item href="#/action-1" onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2" onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
+                                        <Dropdown.Item  onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
+                                        <Dropdown.Item  onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
+                                        <Dropdown.Item  onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </> : (
@@ -109,8 +109,8 @@ const Navbar = () => {
                                         <FaUser className='nav-icon' />
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1" onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2" onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
+                                        <Dropdown.Item  onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
+                                        <Dropdown.Item  onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             )}
@@ -127,9 +127,9 @@ const Navbar = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Daily Essentials</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Cosmetics</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Other groceries</Dropdown.Item>
+                            <Dropdown.Item >Daily Essentials</Dropdown.Item>
+                            <Dropdown.Item >Cosmetics</Dropdown.Item>
+                            <Dropdown.Item >Other groceries</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <a href='#'>About</a>
@@ -140,9 +140,9 @@ const Navbar = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">FAQs</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Privacy Policy</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Terms & Conditions</Dropdown.Item>
+                            <Dropdown.Item >FAQs</Dropdown.Item>
+                            <Dropdown.Item >Privacy Policy</Dropdown.Item>
+                            <Dropdown.Item >Terms & Conditions</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -186,11 +186,11 @@ const Navbar = () => {
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
                                                     {/* {user?.isAdmin && <Dropdown.Item href="" onClick={() => { navigate("/admin-section") }}>Admin Panel</Dropdown.Item>} */}
-                                                    <Dropdown.Item href="#/action-1" onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-2" onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-2" onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </> : (
@@ -199,8 +199,8 @@ const Navbar = () => {
                                                     <FaUser className='nav-icon' />
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item href="#/action-1" onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
-                                                    <Dropdown.Item href="#/action-2" onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
+                                                    <Dropdown.Item  onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         )}
@@ -216,9 +216,9 @@ const Navbar = () => {
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">Daily Essentials</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Cosmetics</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Other groceries</Dropdown.Item>
+                                        <Dropdown.Item >Daily Essentials</Dropdown.Item>
+                                        <Dropdown.Item >Cosmetics</Dropdown.Item>
+                                        <Dropdown.Item >Other groceries</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                                 <a href='#'>About</a>
