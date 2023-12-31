@@ -68,8 +68,8 @@ const ProductDetails = ({ data }) => {
         </div>
       </div>
       <div className='section2'>
-        <h2>{data?.name}</h2>
-        <p>{data?.qty}</p>
+        <h2 className='product-name'>{data?.name}</h2>
+        <p className='product-name'>{data?.qty}</p>
         <div className='price-section'>
           <h3 className='sale-price'>{data?.price}</h3>
           <h4 className='mrp-price'>{data?.mrp}</h4>

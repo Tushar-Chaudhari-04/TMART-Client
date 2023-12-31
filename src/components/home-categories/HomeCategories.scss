@@ -1,16 +1,24 @@
-.homeSlider{
+.home-categories-section{
     margin-top:50px;
-    h4{
-        font-weight: 550;
+    h3{
+       //font-size:25px;
     }
-    .homeSliderData{
-        overflow: hidden;
-        img{
-            transition: all 0.5s ease-in-out;
+    .home-categories-data{
+        display: flex;
+        flex-wrap: wrap;
+        gap:40px;
+        justify-content: center;
+        align-items: center;
+        .homeSliderData{
+            overflow: hidden;
             
-        }
-        img:hover{
-            transform:scale(1.2);
+            img{
+                transition: all 0.5s ease-in-out;
+                
+            }
+            img:hover{
+                transform:scale(1.2);
+            }
         }
     }
 }

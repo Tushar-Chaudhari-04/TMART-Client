@@ -26,16 +26,16 @@ const ProductByCategorySection = () => {
     })
     console.log("productData by category", productCategoryData)
     return (
-        <div>
+        <div className='pro-cat-section'>
             <Navbar />
-            <h3 className='product-category-name'>{productCategoryData[0]?.categoryId}</h3>
+            <h3 className='product-category-name'>{params?.categoryId}</h3>
             <div className='product-by-category'>
                 {
-                    productCategoryData.map(item => {
+                   productCategoryData.length?productCategoryData?.map(item => {
                         return (
                             <CategoryProducts data={item} key={item._id}/>
                         )
-                    })
+                    }):<div>Category products are not available now...</div>
                 }
             </div>
             <Footer />

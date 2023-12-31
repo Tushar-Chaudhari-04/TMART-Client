@@ -98,12 +98,13 @@ const Login = () => {
           setLoading(false);
         },1000)
         dispatch(getUserInfo());
+        message.success(responseData?.message)
         navigate("/")
       } else if ((responseData?.statusCode!==200)) {
         setTimeout(()=>{
           setLoading(false);
         },1000)
-        message.error(responseData?.result);
+        message.error(responseData?.result?responseData?.result:"Network Error.Please try after sometime...");
         navigate("/login")
       }
     }

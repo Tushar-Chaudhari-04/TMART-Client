@@ -7,9 +7,9 @@ const VegesBanner = () => {
         <div className='vegesBanner'>
             <img src={VegesBanneImg} alt="VegesBanner" />
             <div className='veges-content'>
-                <h2>Fresh Vegetables,Fruits and groceries at your doorstep</h2>
-                <h4>We deliver fresh vegetables,fruits and groceries at your doorstep.</h4>
-                <h4>We believe in delvering high quality products at best price</h4>
+                <h3>Fresh Vegetables,Fruits and groceries at your doorstep</h3>
+                <p><></>We deliver fresh vegetables,fruits and groceries at your doorstep.</p>
+                <p>We believe in delvering high quality products at best price</p>
             </div>
         </div>
     )

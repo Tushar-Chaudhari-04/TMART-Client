@@ -17,10 +17,11 @@
 }
 
 .nav-icon{
-  width:22px;
-  height:22px;
+  width:27px;
+  height:27px;
 }
 
 .nav-icon:hover{
   color:var(--primary-color);
 }
+

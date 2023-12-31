@@ -1,40 +1,88 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./FavouritePick.scss"
 import Slider from "react-slick";
 import { FaEye } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+// import {FaChevronLeft, FaChevronRight} from 'react-icons'
+import { IoMdArrowDropleftCircle } from "react-icons/io";
+import { IoMdArrowDroprightCircle } from "react-icons/io";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const FavouritePick = () => {
 
     const navigate = useNavigate();
-    
-    const productData = useSelector((state) => state?.ProductReducer?.productData);
-    console.log("productData",productData)
 
-    var settings = {
+    const productData = useSelector((state) => state?.ProductReducer?.productData);
+    console.log("productData", productData)
+
+    const [sliderRef, setSliderRef] = useState(null)
+
+    const sliderSettings = {
+        // autoplay: true,
+        // autoplaySpeed: 3000,
+        // dots: true,
+        // infinite: true,
+        // speed: 2000,
+        // slidesToShow: 6,
+        // slidesToScroll: 1,
+        // arrows: false,
+        // fade:true,
+        arrows: false,
+        infinite: true,
         autoplay: true,
         autoplaySpeed: 3000,
-        dots: true,
-        infinite: true,
         speed: 2000,
+        dots: true,
         slidesToShow: 6,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        lazyLoad: true,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 4,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                },
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                },
+            }
+        ],
     };
-
-   // console.log("data", data)
 
     const handleChange = () => {
         console.log("btn clicked")
+        console.log("sliderRef", sliderRef)
 
     }
+    console.log("sliderRef", sliderRef)
     return (
         <div className='favouriteSlider'>
-            <Slider {...settings} className='favouriteSlider'>
-                {productData?.map(item => {
+            <div className='controls'>
+                <button className="btn-prev" onClick={sliderRef?.slickPrev}>
+                    <IoMdArrowDropleftCircle />
+                </button>
+
+                <button className="btn-next" onClick={sliderRef?.slickNext}>
+                    <IoMdArrowDroprightCircle />
+                </button>
+            </div>
+            
+            <Slider ref={setSliderRef} {...sliderSettings} className='favouriteSlider'>
+                {productData.length ? productData?.map((item, index) => {
                     return (
-                        <div className='favouriteSliderData'>
+                        <div className='favouriteSliderData' key={index}>
                             <div className='item-image-section'>
                                 <img src={item.url} />
                             </div>
@@ -50,19 +98,24 @@ const FavouritePick = () => {
                                     <button className='btn btn-outline-danger' onClick={() => {
                                         navigate(`/products/${item.name}`)
                                     }}>Add</button>
-                                    {/* <FaEye className='eye-btn' onClick={()=>{
-                                     navigate(`/products/${item.name}`)
-                                }}/> */}
-                                    {/* <FaCirclePlus className='eye-btn' onClick={handleChange}/> */}
                                 </div>
 
                             </div>
                         </div>
                     )
-                })}
+                }) : navigate("/login")}
             </Slider>
+
         </div>
     )
 }
 
 export default FavouritePick
+
+
+/*
+    <FaEye className='eye-btn' onClick={()=>{
+                                     navigate(`/products/${item.name}`)
+                                }}/>
+    <FaCirclePlus className='eye-btn' onClick={handleChange}/>
+*/

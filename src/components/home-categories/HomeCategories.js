@@ -60,14 +60,15 @@ const HomeCategories = () => {
         dots: true,
         infinite: true,
         speed: 2000,
-        slidesToShow: 6,
+        slidesToShow: 5,
         slidesToScroll: 1
     };
 
   return (
-    <div className='homeSlider'>
-    <h4>Explore By Categories</h4>
-    <Slider {...settings} className='homeSlider'>
+    <div className='home-categories-section'>
+     <h4>Explore By Categories</h4>
+     <div className='home-categories-data'>
+    {/* <Slider {...settings} className='homeSlider'> */}
     {homeSliderData.map(item=>{
         return(
             <div className='homeSliderData'>
@@ -75,7 +76,8 @@ const HomeCategories = () => {
             </div>
         )
     })}
-    </Slider>
+    {/* </Slider> */}
+    </div>
     </div>
   )
 }

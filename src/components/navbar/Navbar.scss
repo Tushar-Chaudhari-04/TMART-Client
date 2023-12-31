@@ -1,23 +1,28 @@
-.navbar-section,nav {
+.navbar-section,
+nav {
     display: flex;
     flex-direction: column;
     //padding: 2px;
     //box-shadow:var(--nav-box-shadow);
     padding: 4px;
-    box-shadow:var(--nav-box-shadow);
-    margin:0 -40px 20px -40px;
+    box-shadow: var(--nav-box-shadow);
+    margin: 0 -30px 20px -30px;
+
     .nav-up-section {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-top: 10px;
 
         .logo-section {
             display: flex;
             align-items: center;
-            .shop-logo{
+
+            .shop-logo {
                 width: 220px;
                 height: 70px;
             }
+
             .tmart-logo {
                 width: 150px;
                 height: 45px;
@@ -27,151 +32,597 @@
             .tmart-name {
                 color: darkorange;
                 text-transform: capitalize;
-                margin-left:-40px;
+                margin-left: -40px;
             }
         }
 
         .searchbar-section {
             display: flex;
             align-items: center;
-            box-shadow:var(--nav-box-shadow);
-            border:0.1px dotted #635b5b;
+            box-shadow: var(--nav-box-shadow);
+            border: 0.1px dotted #635b5b;
             border-radius: 5px;
             overflow: hidden;
             padding: 5px;
             justify-content: space-between;
-            width:45%;
-            .tmart-search{
-                border:none;
+            width: 35%;
+
+            .tmart-search {
+                border: none;
                 outline: none;
                 width: 100%;
                 font-size: 16px;
             }
-            .search-icon-btn{
-                border:none;
-                color:var(--primary-color);
+
+            .search-icon-btn {
+                border: none;
+                color: var(--primary-color);
                 background-color: transparent;
                 cursor: pointer;
-                
-                .search-icon{
-                    width:25px;
-                    height:25px;
+
+                .search-icon {
+                    width: 25px;
+                    height: 25px;
                 }
 
-                .search-icon:hover{
+                .search-icon:hover {
                     background-color: var(--primary-color);
-                    border-radius:50%;
+                    border-radius: 50%;
                     padding: 5px;
-                    color:#fff;
+                    color: #fff;
                 }
             }
 
-           
+
         }
 
 
-        .nav-right{
+        .nav-right {
             display: flex;
-            gap:30px;
+            gap: 30px;
             justify-content: space-between;
             align-items: center;
             margin-right: 35px;
             cursor: pointer;
-            .cart-section{
+
+            .cart-section {
                 position: relative;
                 display: flex;
-                width:200px;
+                width: 200px;
                 background-color: rgba(var(--btn-primary-color));
                 color: #fff;
                 width: 130px;
                 border-radius: 10px;
                 border: none;
-                transition: all 0.5s ease-in-out;;
+                transition: all 0.5s ease-in-out;
+                ;
                 justify-content: space-around;
                 align-items: center;
-                .shopping-cart{
+
+                .shopping-cart {
                     width: 22px;
                     height: 22px;
                 }
-                .my-cart{
+
+                .my-cart {
                     margin-top: 15px;
                     font-weight: 500;
                     margin-left: -25px;
                 }
-                .cart-qty{
-                    position: absolute;   
+
+                .cart-qty {
+                    position: absolute;
                     display: flex;
                     justify-content: center;
-                    align-items: center;             
+                    align-items: center;
                     background-color: var(--primary-color);
-                    color:#fff;
+                    color: #fff;
                     border-radius: 50%;
                     padding: 4px;
                     width: 25px;
                     height: 25px;
-                    margin-top:-42px;
-                    margin-left: 12px;
+                    margin-top: -34px;
+                    margin-left:-40px;
                     text-align: center;
                 }
             }
 
-            .cart-section:hover{
+            .cart-section:hover {
                 transform: scale(1.1);
             }
 
-            .user-section{
+            .user-section {
                 //margin-right: 80px;
-                width:180px;
-                display:flex;
+                width: 180px;
+                display: flex;
                 justify-content: space-around;
                 align-items: center;
 
-                h4{
-                    margin-top:15px;
+                h4 {
+                    margin-top: 15px;
                 }
-                a{
+
+                a {
                     cursor: pointer;
                     font-weight: 400;
                     font-size: 16px;
                     text-decoration: none;
-                    color:#000;
-        
+                    color: #000;
+
                 }
-        
-                a:hover{
+
+                a:hover {
                     color: var(--primary-color);
                 }
-                .user-icon{
-                    
-                }
+
+                .user-icon {}
             }
-            .logout-icon{
+
+            .logout-icon {
                 cursor: pointer;
                 font-weight: 400;
                 font-size: 16px;
                 text-decoration: none;
-                color:#000;
+                color: #000;
             }
         }
     }
 
     .nav-down-section {
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
-        gap:3%;
+        gap: 3%;
         padding: 10px;
-        a{
+
+        a {
             cursor: pointer;
             font-weight: 400;
             font-size: 16px;
             text-decoration: none;
-            color:#000;
+            color: #000;
 
         }
 
-        a:hover{
+        a:hover {
             color: var(--primary-color);
         }
     }
+
+    .nav-responsive {
+        display: none;
+
+        .nav-responsive-up-section {}
+    }
 }
+
+
+//Responsive Navbar Scss...
+
+/* Extra small devices (phones, 600px and down) */
+// @media only screen and (max-width: 600px) {
+
+// }
+
+// /* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {
+
+// }
+
+// @media only screen and (max-width:768px) {
+//     .navbar-section {
+//         .nav-up-section {
+//             display: none;
+//         }
+
+//         .nav-down-section {
+//             display: none;
+//         }
+
+//         .nav-responsive {
+//             display: block;
+
+//             .nav-responsive-up-section {
+//                 display: flex;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 padding: 10px 30px;
+
+//                 .logo-section {
+//                     display: flex;
+//                     align-items: center;
+
+//                     .shop-logo {
+//                         width: 220px;
+//                         height: 70px;
+//                     }
+
+//                     .tmart-logo {
+//                         width: 150px;
+//                         height: 45px;
+//                         color: rgb(18, 178, 18)
+//                     }
+
+//                     .tmart-name {
+//                         color: darkorange;
+//                         text-transform: capitalize;
+//                         margin-left: -40px;
+//                     }
+//                 }
+//             }
+
+//             .nav-search-and-cart {
+//                 display:flex;
+//                 flex-direction: column;
+//                 justify-content: space-between;
+//                 .searchbar-section {
+//                     display: flex;
+//                     box-shadow: var(--nav-box-shadow);
+//                     border: 0.1px dotted #635b5b;
+//                     border-radius: 5px;
+//                     overflow: hidden;
+//                     padding: 5px;
+//                     justify-content: space-between;
+//                     align-items: center;
+//                     width: 100%;
+//                     margin-left: 10%;
+
+//                     .tmart-search {
+//                         border: none;
+//                         outline: none;
+//                         width: 100%;
+//                         font-size: 18px;
+//                     }
+
+//                     .search-icon-btn {
+//                         border: none;
+//                         color: var(--primary-color);
+//                         background-color: transparent;
+//                         cursor: pointer;
+
+//                         .search-icon {
+//                             width: 25px;
+//                             height: 25px;
+//                         }
+
+//                         .search-icon:hover {
+//                             background-color: var(--primary-color);
+//                             border-radius: 50%;
+//                             padding: 5px;
+//                             color: #fff;
+//                         }
+//                     }
+
+
+//                 }
+
+//                 .nav-right {
+//                     display: flex;
+//                     gap: 30px;
+//                     justify-content: space-between;
+//                     align-items: center;
+//                     margin-right: 35px;
+//                     margin-top: 20px;
+//                     cursor: pointer;
+
+//                     .cart-section {
+//                         position: relative;
+//                         display: flex;
+//                         width: 200px;
+//                         background-color: rgba(var(--btn-primary-color));
+//                         color: #fff;
+//                         width: 130px;
+//                         border-radius: 10px;
+//                         border: none;
+//                         transition: all 0.5s ease-in-out;
+//                         ;
+//                         justify-content: space-around;
+//                         align-items: center;
+
+//                         .shopping-cart {
+//                             width: 22px;
+//                             height: 22px;
+//                         }
+
+//                         .my-cart {
+//                             margin-top: 15px;
+//                             font-weight: 500;
+//                             margin-left: -25px;
+//                         }
+
+//                         .cart-qty {
+//                             position: absolute;
+//                             display: flex;
+//                             justify-content: center;
+//                             align-items: center;
+//                             background-color: var(--primary-color);
+//                             color: #fff;
+//                             border-radius: 50%;
+//                             padding: 4px;
+//                             width: 25px;
+//                             height: 25px;
+//                             margin-top: -42px;
+//                             margin-left: 12px;
+//                             text-align: center;
+//                         }
+//                     }
+
+//                     .cart-section:hover {
+//                         transform: scale(1.1);
+//                     }
+
+//                     .user-section {
+//                         //margin-right: 80px;
+//                         width: 180px;
+//                         display: flex;
+//                         justify-content: space-around;
+//                         align-items: center;
+
+//                         h4 {
+//                             margin-top: 15px;
+//                         }
+
+//                         a {
+//                             cursor: pointer;
+//                             font-weight: 400;
+//                             font-size: 16px;
+//                             text-decoration: none;
+//                             color: #000;
+
+//                         }
+
+//                         a:hover {
+//                             color: var(--primary-color);
+//                         }
+
+//                         .user-icon {}
+//                     }
+
+//                     .logout-icon {
+//                         cursor: pointer;
+//                         font-weight: 400;
+//                         font-size: 16px;
+//                         text-decoration: none;
+//                         color: #000;
+//                     }
+//                 }
+//             }
+
+//             .nav-down-section {
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 gap: 3%;
+//                 padding: 10px;
+
+//                 a {
+//                     cursor: pointer;
+//                     font-weight: 400;
+//                     font-size: 16px;
+//                     text-decoration: none;
+//                     color: #000;
+
+//                 }
+
+//                 a:hover {
+//                     color: var(--primary-color);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+/* Small and Medium devices (phones,portrait tablets,large phones,landscape tablets, 768px and down) */
+@media only screen and (max-width: 992px) {
+    .navbar-section {
+        .nav-up-section {
+            display: none;
+        }
+
+        .nav-down-section {
+            display: none;
+        }
+
+        .nav-responsive {
+            display: block;
+
+            .nav-responsive-up-section {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 30px;
+
+                .logo-section {
+                    display: flex;
+                    align-items: center;
+
+                    .shop-logo {
+                        width: 220px;
+                        height: 70px;
+                    }
+
+                    .tmart-logo {
+                        width: 150px;
+                        height: 45px;
+                        color: rgb(18, 178, 18)
+                    }
+
+                    .tmart-name {
+                        color: darkorange;
+                        text-transform: capitalize;
+                        margin-left: -40px;
+                    }
+                }
+            }
+
+            .nav-search-and-cart {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                .searchbar-section {
+                    display: flex;
+                    box-shadow: var(--nav-box-shadow);
+                    border: 0.1px dotted #635b5b;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    padding: 5px;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 90%;
+                    margin-left: 4%;
+
+                    .tmart-search {
+                        border: none;
+                        outline: none;
+                        width: 100%;
+                        font-size: 18px;
+                    }
+
+                    .search-icon-btn {
+                        border: none;
+                        color: var(--primary-color);
+                        background-color: transparent;
+                        cursor: pointer;
+
+                        .search-icon {
+                            width: 25px;
+                            height: 25px;
+                        }
+
+                        .search-icon:hover {
+                            background-color: var(--primary-color);
+                            border-radius: 50%;
+                            padding: 5px;
+                            color: #fff;
+                        }
+                    }
+
+
+                }
+
+                .nav-right {
+                    display: flex;
+                    gap: 30px;
+                    justify-content: space-around;
+                    align-items: center;
+                    margin-right: 35px;
+                    margin-top: 20px;
+                    cursor: pointer;
+
+                    .cart-section {
+                        position: relative;
+                        display: flex;
+                        width: 200px;
+                        background-color: rgba(var(--btn-primary-color));
+                        color: #fff;
+                        width: 130px;
+                        border-radius: 10px;
+                        border: none;
+                        transition: all 0.5s ease-in-out;
+                        ;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        .shopping-cart {
+                            width: 22px;
+                            height: 22px;
+                        }
+
+                        .my-cart {
+                            margin-top: 15px;
+                            font-weight: 500;
+                            margin-left: -25px;
+                        }
+
+                        .cart-qty {
+                            position: absolute;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: var(--primary-color);
+                            color: #fff;
+                            border-radius: 50%;
+                            padding: 4px;
+                            width: 25px;
+                            height: 25px;
+                            margin-top: -42px;
+                            margin-left: 12px;
+                            text-align: center;
+                        }
+                    }
+
+                    .cart-section:hover {
+                        transform: scale(1.1);
+                    }
+
+                    .user-section {
+                        //margin-right: 80px;
+                        width: 180px;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        h4 {
+                            margin-top: 15px;
+                        }
+
+                        a {
+                            cursor: pointer;
+                            font-weight: 400;
+                            font-size: 16px;
+                            text-decoration: none;
+                            color: #000;
+
+                        }
+
+                        a:hover {
+                            color: var(--primary-color);
+                        }
+
+                        .user-icon {}
+                    }
+
+                    .logout-icon {
+                        cursor: pointer;
+                        font-weight: 400;
+                        font-size: 16px;
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+
+            .nav-down-section {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 3%;
+                padding: 10px;
+
+                a {
+                    cursor: pointer;
+                    font-weight: 400;
+                    font-size: 16px;
+                    text-decoration: none;
+                    color: #000;
+
+                }
+
+                a:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
+
+// /* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {
+
+// }
+
+// /* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {
+
+// }
