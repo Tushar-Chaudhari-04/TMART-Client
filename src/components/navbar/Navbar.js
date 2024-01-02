@@ -9,7 +9,7 @@ import fitgrocery from "../../assets/logo.png"
 import { useNavigate } from 'react-router-dom';
 import { BsFillHandbagFill } from "react-icons/bs";
 import { IoIosLogOut } from "react-icons/io";
-import { USER, ACCESS_TOKEN, setItem, getItem, USER_FIRST_NAME, removeItem, USER_LAST_NAME } from '../../utils/localStorageManager';
+import { USER, ACCESS_TOKEN, setItem, getItem, USER_FIRST_NAME, removeItem, USER_LAST_NAME, PRODUCT_DATA } from '../../utils/localStorageManager';
 import { Spin } from 'antd'
 import { useDispatch, useSelector } from 'react-redux';
 import { resetUser } from '../../redux/slice/UserSlice';
@@ -18,8 +18,9 @@ import { FaWindowClose } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaHamburger } from "react-icons/fa";
 import { message } from "antd"
+import { axiosClient } from '../../utils/AxiosClient';
 
-const Navbar = () => {
+const Navbar = ({setProductSearch}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -30,12 +31,42 @@ const Navbar = () => {
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(false);
     const [showNav, setShowNav] = useState(false);
-    const [qty, setQty] = useState(cartData.length?cartData.length:0);
+    const [qty, setQty] = useState(cartData.length ? cartData.length : 0);
+    const [searchParams, setSearchParams] = useState("");
 
     useEffect(() => {
         setUser(JSON.parse(getItem(USER)));
         setQty(cartData.length);
-    }, [cartData.length])
+    }, [])
+
+    const handleChange =async (e) => {
+        const { name, value } = e.target;
+        const modifiedText=convertToTitleCase(value);
+        if(modifiedText.length>0){
+            setSearchParams(modifiedText);
+        }
+       
+    }
+
+    const handleSearch = async() => {
+        navigate("/search");
+        if (typeof setProductSearch === 'function') {
+            navigate("/search");
+            const filteredResponse = await axiosClient.post(`/product/searchProduct?searchParams=${searchParams}`);
+            const filteredProducts = filteredResponse?.data?.result;
+            setProductSearch({filteredProducts});
+          } else {
+            message.info("Please Try Again...")
+            console.error("setProductSearch is not a function");
+          }
+    }
+
+    const convertToTitleCase = (str) => {
+        if (!str) {
+            return ""
+        }
+        return str.toLowerCase().replace(/\b\w/g, s => s.toUpperCase());
+    }
 
     const handleLogout = () => {
         message.success(`${user?.firstName} has logout successfully...`)
@@ -47,8 +78,8 @@ const Navbar = () => {
         setTimeout(() => {
             setLoading(false);
             navigate("/login")
-            }, 1000);
-       
+        }, 1000);
+
     }
 
     return (
@@ -64,9 +95,9 @@ const Navbar = () => {
                     </div>
 
                     <div className='searchbar-section'>
-                        <input type="text" placeholder='Search for products and categories' className='tmart-search' />
-                        <button className='search-icon-btn'>
-                            <IoMdSearch className='search-icon' />
+                        <input type="text" placeholder='Search for products and categories' className='tmart-search' name='searchParams' onChange={handleChange} />
+                        <button className='search-icon-btn' onClick={handleSearch}>
+                            <IoMdSearch className='search-icon'/>
                         </button>
                     </div>
 
@@ -74,7 +105,7 @@ const Navbar = () => {
                         {user && <div className='cart-section' onClick={() => navigate("/cart")}>
                             <BsFillHandbagFill className='shopping-cart' />
                             <p className='my-cart'>My Cart</p>
-                            {qty>0?<span className='cart-qty'>{qty}</span>:""}
+                            {qty > 0 ? <span className='cart-qty'>{qty}</span> : ""}
                         </div>
                         }
                         {!user && <div className='cart-section' onClick={() => navigate("/login")}>
@@ -92,10 +123,10 @@ const Navbar = () => {
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         {/* {user?.isAdmin && <Dropdown.Item href="" onClick={() => { navigate("/admin-section") }}>Admin Panel</Dropdown.Item>} */}
-                                        <Dropdown.Item  onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
                                         <Dropdown.Item onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
-                                        <Dropdown.Item  onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
-                                        <Dropdown.Item  onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
                                         <Dropdown.Item onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -105,8 +136,8 @@ const Navbar = () => {
                                         <FaUser className='nav-icon' />
                                     </Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item  onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
-                                        <Dropdown.Item  onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
+                                        <Dropdown.Item onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
                             )}
@@ -164,7 +195,7 @@ const Navbar = () => {
                                     {user && <div className='cart-section' onClick={() => navigate("/cart")}>
                                         <BsFillHandbagFill className='shopping-cart' />
                                         <p className='my-cart'>My Cart</p>
-                                        {qty>0?<span className='cart-qty'>{qty}</span>:""}
+                                        {qty > 0 ? <span className='cart-qty'>{qty}</span> : ""}
                                     </div>
                                     }
                                     {!user && <div className='cart-section' onClick={() => navigate("/login")}>
@@ -183,10 +214,10 @@ const Navbar = () => {
                                                 <Dropdown.Menu>
                                                     {/* {user?.isAdmin && <Dropdown.Item href="" onClick={() => { navigate("/admin-section") }}>Admin Panel</Dropdown.Item>} */}
                                                     <Dropdown.Item onClick={() => { navigate("/profile") }}>Profile</Dropdown.Item>
-                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
-                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
-                                                    <Dropdown.Item  onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
-                                                    <Dropdown.Item  onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/orders") }}>Orders</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/orders") }}>Address</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/orders") }}>Wallet</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/customer-support") }}>Customer Support</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         </> : (
@@ -195,8 +226,8 @@ const Navbar = () => {
                                                     <FaUser className='nav-icon' />
                                                 </Dropdown.Toggle>
                                                 <Dropdown.Menu>
-                                                    <Dropdown.Item  onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
-                                                    <Dropdown.Item  onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/register") }}>Register</Dropdown.Item>
+                                                    <Dropdown.Item onClick={() => { navigate("/login") }}>Login</Dropdown.Item>
                                                 </Dropdown.Menu>
                                             </Dropdown>
                                         )}

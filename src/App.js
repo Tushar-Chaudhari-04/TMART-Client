@@ -25,6 +25,7 @@ import { getUserInfo } from './redux/slice/UserSlice';
 import { getProducts } from './redux/slice/ProductSlice';
 import { USER, getItem } from './utils/localStorageManager';
 import Payment from './components/payment/Payment';
+import ProductSearchSection from './pages/product-search-section/ProductSearchSection';
 
 function App() {
   const dispatch = useDispatch();
@@ -47,7 +48,7 @@ function App() {
           <Route path='/logout' element={<Home/>} />
           <Route path='/' element={<Home />} />
           <Route path='/categories/:categoryId' element={<ProductByCategorySection/>}/>
-          <Route path='/about' element={<About />} />
+          <Route path='/search' element={<ProductSearchSection/>} />
           <Route path='/service' element={<Home />} />
           <Route path='/contact-us' element={<Home />} />
           <Route path='/products/:productId' element={<ProductsDetailSection />} />

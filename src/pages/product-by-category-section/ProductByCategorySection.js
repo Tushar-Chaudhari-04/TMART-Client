@@ -6,6 +6,7 @@ import CategoryProducts from '../../components/category-products/CategoryProduct
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import CategoryWiseData from '../../tmart-data/CategoryWiseData'
 import { useSelector } from 'react-redux'
+import ProductData from '../../components/product-data/ProductData'
 
 const ProductByCategorySection = () => {
     const params = useParams();
@@ -28,15 +29,7 @@ const ProductByCategorySection = () => {
         <div className='pro-cat-section'>
             <Navbar />
             <h3 className='product-category-name'>{params?.categoryId}</h3>
-            <div className='product-by-category'>
-                {
-                   productCategoryData.length?productCategoryData?.map(item => {
-                        return (
-                            <CategoryProducts data={item} key={item._id}/>
-                        )
-                    }):<div>Category products are not available now...</div>
-                }
-            </div>
+            <ProductData productSearch={productCategoryData}/>
             <Footer />
         </div>
     )
