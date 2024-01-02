@@ -46,6 +46,7 @@ const Navbar = ({setProductSearch}) => {
             setSearchParams(modifiedText);
         }
        
+        handleSearch();
     }
 
     const handleSearch = async() => {
